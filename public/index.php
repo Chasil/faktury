@@ -17,6 +17,19 @@ session_start();
 $settings = require __DIR__ . '/../src/settings.php';
 $app = new \Slim\App($settings);
 
+// Register Twig View helper
+$container['view'] = function ($c) {
+    $view = new \Slim\Views\Twig('templates', [
+        'cache' => 'cache'
+    ]);
+    
+    // Instantiate and add Slim specific extension
+    $basePath = rtrim(str_ireplace('index.php', '', $c['request']->getUri()->getBasePath()), '/');
+    $view->addExtension(new \Slim\Views\TwigExtension($c['router'], $basePath));
+
+    return $view;
+};
+
 // Set up dependencies
 require __DIR__ . '/../src/dependencies.php';
 
