@@ -1,0 +1,165 @@
+{% extends 'index.phtml' %}
+
+{% block view %}
+<div class="row">
+    <h1>WPROWADŹ NOWEGO KLIENTA</h1>
+</div>
+<div class="row">
+    <form style="width: 50%">
+        <div class="form-group row">
+            <label for="firma" class="col-sm-4 col-form-label">Nazwa firmy</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" name="firma" id="firma">
+            </div>
+        </div>
+        <div class="form-group row">
+           <label for="stanowisko" class="col-sm-4 col-form-label">Stanowisko</label>
+           <div class="col-sm-8">
+               <input type="text" class="form-control" name="stanowisko" id="stanowisko">
+           </div>
+        </div>
+        <div class="form-group row">
+           <label for="tytul" class="col-sm-4 col-form-label">Pan/Pani</label>
+           <div class="col-sm-8">
+            <select id="tytul" class="form-control" name="tytul">
+                <option value="pan">Pan</option>
+                <option value="pani">Pani</option>
+            </select>
+           </div>
+        </div>
+        <div class="form-group row">
+           <label for="imie" class="col-sm-4 col-form-label">Imię</label>
+           <div class="col-sm-8">
+               <input type="text" class="form-control" name="imie" id="imie">
+           </div>
+        </div>
+        <div class="form-group row">
+           <label for="nazwisko" class="col-sm-4 col-form-label">Nazwisko</label>
+           <div class="col-sm-8">
+               <input type="text" class="form-control" name="nazwisko" id="nazwisko">
+           </div>
+        </div>
+        <div class="form-group row">
+           <label for="pseudonim" class="col-sm-4 col-form-label">Pseudonim</label>
+           <div class="col-sm-8">
+               <input type="text" class="form-control" name="pseudonim" id="pseudonim">
+           </div>
+        </div>
+        <div class="form-group row">
+           <label for="zatrudniony_od" class="col-sm-4 col-form-label">Zatrudniony od</label>
+           <div class='input-group date col-sm-8' id="zatrudniony_od">
+                <input type='text' class="form-control" name="zatrudniony_od" id="zatrudniony_od_data">
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+        </div>
+        <div class="form-group row">
+           <label for="zatrudniony_do" class="col-sm-4 col-form-label">Zatrudniony do</label>
+           <div class='input-group date col-sm-8' id='zatrudniony_do'>
+                <input type='text' class="form-control" name="zatrudniony_do" id="zatrudniony_do_data">
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="pstawka" class="col-sm-4 col-form-label">Pstawka</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" name="pstawka" id="pstawka">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="telefon" class="col-sm-4 col-form-label">Telefon</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" name="telefon" id="telefon">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="mobile" class="col-sm-4 col-form-label">Komórka</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" name="mobile" id="mobile">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="kraj" class="col-sm-4 col-form-label">Kraj</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" name="kraj" id="kraj">
+            </div>
+        </div>
+        <div class="form-group row">
+           <label for="wojewodztwo" class="col-sm-4 col-form-label">Województwo</label>
+           <div class="col-sm-8">
+                <select id="wojewodztwo" class="form-control" name="wojewodztwo">
+                    <option value="dolnośląskie">dolnośląskie</option>
+                    <option value="kujawsko-pomorskie">kujawsko-pomorskie</option>
+                    <option value="lubelskie">lubelskie</option>
+                    <option value="lubuskie">lubuskie</option>
+                    <option value="łódzkie">łódzkie</option>
+                    <option value="małopolskie">małopolskie</option>
+                    <option value="mazowieckie">mazowieckie</option>
+                    <option value="opolskie">opolskie</option>
+                    <option value="podkarpackie">podkarpackie</option>
+                    <option value="podlaskie">podlaskie</option>
+                    <option value="pomorskie">pomorskie</option>
+                    <option value="śląskie">śląskie</option>
+                    <option value="świętokrzyskie">świętokrzyskie</option>
+                    <option value="warmińsko-mazurskie">warmińsko-mazurskie</option>
+                    <option value="wielkopolskie">wielkopolskie</option>
+                    <option value="zachodniopomorskie">zachodniopomorskie</option>
+                </select>
+           </div>
+        </div>
+        <div class="form-group row">
+           <label for="miasto" class="col-sm-4 col-form-label">Miasto</label>
+           <div class="col-sm-8">
+               <input type="text" class="form-control" name="miasto" id="miasto">
+           </div>
+        </div>
+        <div class="form-group row">
+           <label for="ulica" class="col-sm-4 col-form-label">Ulica</label>
+           <div class="col-sm-8">
+               <input type="text" class="form-control" name="ulica" id="ulica">
+           </div>
+        </div>
+        <div class="form-group row">
+           <label for="nr_lokalu" class="col-sm-4 col-form-label">Nr lokalu</label>
+           <div class="col-sm-8">
+               <input type="text" class="form-control" name="nr_lokalu" id="nr_lokalu">
+           </div>
+        </div>
+        <div class="form-group row">
+           <label for="email" class="col-sm-4 col-form-label">E-mail</label>
+           <div class="col-sm-8">
+               <input type="email" class="form-control" name="email" id="email">
+           </div>
+        </div>
+        <div class="form-group row">
+           <label for="nalezny_urlop" class="col-sm-4 col-form-label">Należny urlop</label>
+           <div class="col-sm-8">
+               <input type="text" class="form-control" name="nalezny_urlop" id="nalezny_urlop">
+           </div>
+        </div>
+        <div class="form-group row">
+           <label for="wykorzystany_urlop" class="col-sm-4 col-form-label">Wykorzystany urlop</label>
+           <div class="col-sm-8">
+               <input type="text" class="form-control" name="wykorzystany_urlop" id="wykorzystany_urlop">
+           </div>
+        </div>
+        <div class="form-group row">
+           <label for="foto" class="col-sm-4 col-form-label">Foto</label>
+           <div class="col-sm-8">
+               <input type="text" class="form-control" name="foto" id="foto">
+           </div>
+        </div>
+        <div class="form-group row">
+           <label for="uwagi" class="col-sm-4 col-form-label">Uwagi</label>
+           <div class="col-sm-8">
+               <input type="text" class="form-control" name="uwagi" id="uwagi">
+           </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Dodaj</button>
+    </form>
+</div>
+
+{% endblock %}

@@ -17,3 +17,11 @@ $container['logger'] = function ($c) {
     $logger->pushHandler(new Monolog\Handler\StreamHandler($settings['path'], $settings['level']));
     return $logger;
 };
+
+$container['clients'] = function($c) {
+    return new \Controllers\Clients();
+};
+
+$container['home'] = function($c) {
+    return new \Controllers\Home();
+};
