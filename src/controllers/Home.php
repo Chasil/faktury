@@ -4,8 +4,8 @@ namespace Controllers;
 
 class Home extends \Controllers\BaseController {
         
-    public function __construct() {
-        parent::__construct();
+    public function __construct($c) {
+        parent::__construct($c);
     }
 
     public function index($request, $response, array $args = [])

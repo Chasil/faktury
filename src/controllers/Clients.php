@@ -2,18 +2,19 @@
 
 namespace Controllers;
 
+use \Models\Client;
+
 class Clients extends \Controllers\BaseController {
-        
-    public function __construct() {
-        parent::__construct();
+    
+    public function __construct($c) {
+        parent::__construct($c);
     }
 
     public function index($request, $response, array $args = [])
     {
-        $clients = new \Models\Clients();
-//        $clients->loadAll();
+        $clients = Client::get();
         
-        $this->twig->render($response, 'clients.phtml');
+        $this->twig->render($response, 'clients.phtml', array('clients' => $clients));
         
         return $response;
     }

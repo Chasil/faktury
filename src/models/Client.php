@@ -2,9 +2,8 @@
 
 namespace Models;
 
-class Client {
+class Client extends \Illuminate\Database\Eloquent\Model {
     
-    public function add() {
-        
-    }
+    protected $table = 'klienci';
+    
 }

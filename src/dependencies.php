@@ -19,9 +19,19 @@ $container['logger'] = function ($c) {
 };
 
 $container['clients'] = function($c) {
-    return new \Controllers\Clients();
+    return new \Controllers\Clients($c);
 };
 
 $container['home'] = function($c) {
-    return new \Controllers\Home();
+    return new \Controllers\Home($c);
+};
+
+$container['db'] = function($c) {
+    $capsule = new \Illuminate\Database\Capsule\Manager;
+    $capsule->addConnection($c['settings']['db']);
+
+    $capsule->setAsGlobal();
+    $capsule->bootEloquent();
+
+    return $capsule;
 };
