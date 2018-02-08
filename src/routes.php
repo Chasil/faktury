@@ -7,7 +7,9 @@ use Slim\Http\Response;
 
 $app->get('/clients', 'clients:index');
 
-$app->get('/addclient', 'clients:addClient');
+$app->get('/addClient', 'clients:addClient');
 $app->post('/addclient', 'clients:saveClient');
+
+$app->get('/employees', 'employees:index');
 
 $app->get('/[{name}]', 'home:index');

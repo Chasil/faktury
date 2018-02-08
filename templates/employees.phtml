@@ -1,0 +1,70 @@
+{% extends "index.phtml" %}
+
+{% block view %}
+
+    <div class="row">
+        <H1>PRACOWNICY</H1>
+    </div>
+    <div class="row">
+        <a href="addEmployee" class="btn btn-success btn-lg" role="button">Dodaj pracownika</a>
+    </div>
+    <div class="row">
+        <table class='table table-striped'>
+            <thead>
+                <tr>
+                    <th>Stanowisko</th>
+                    <th>Tytuł</th>
+                    <th>Imię</th>
+                    <th>Nazwisko</th>
+                    <th>Pseudonim</th>
+                    <th>Zatrudniony od</th>
+                    <th>Zatrudniony do</th>
+                    <th>Stawka</th>
+                    <th>Telefon</th>
+                    <th>Komórka</th>
+                    <th>Kraj</th>
+                    <th>Województwo</th>
+                    <th>Miasto</th>
+                    <th>Ulica</th>
+                    <th>Nr Lokalu</th>
+                    <th>Email</th>
+                    <th>Urlop N.</th>
+                    <th>Urlop W.</th>
+                    <th>Foto</th>
+                    <th>Uwagi</th>
+                    <th>Edytuj</th>
+                    <th>Usuń</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for employee in employees %}
+                <tr>
+                <td>{{ employee.stanowisko }}</td>
+                <td>{{ employee.tytul }}</td>
+                <td>{{ employee.imie }}</td>
+                <td>{{ employee.nazwisko }}</td>
+                <td>{{ employee.pseudonim }}</td>
+                <td>{{ employee.zatrudniony_od }}</td>
+                <td>{{ employee.zatrudniony_do }}</td>
+                <td>{{ employee.pstawka }}</td>
+                <td>{{ employee.telefon }}</td>
+                <td>{{ employee.mobile }}</td>
+                <td>{{ employee.kraj }}</td>
+                <td>{{ employee.wojewodztwo }}</td>
+                <td>{{ employee.miasto }}</td>
+                <td>{{ employee.ulica }}</td>
+                <td>{{ employee.nr_lokalu }}</td>
+                <td>{{ employee.email }}</td>
+                <td>{{ employee.nalezny_urlop }}</td>
+                <td>{{ employee.wykorzystany_urlop }}</td>
+                <td>{{ employee.foto }}</td>
+                <td>{{ employee.uwagi }}</td>
+                <td><a href="#">Edytuj</a></td>
+                <td><a href="#">Usuń</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

@@ -21,7 +21,7 @@ class Clients extends \Controllers\BaseController {
     
     public function addClient($request, $response, array $args = [])
     {
-        $this->twig->render($response, 'add_client.phtml');
+        $this->twig->render($response, 'addClient.phtml');
         
         return $response;
     }

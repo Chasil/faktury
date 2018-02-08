@@ -22,6 +22,10 @@ $container['clients'] = function($c) {
     return new \Controllers\Clients($c);
 };
 
+$container['employees'] = function($c) {
+    return new \Controllers\Employees($c);
+};
+
 $container['home'] = function($c) {
     return new \Controllers\Home($c);
 };
