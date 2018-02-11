@@ -18,6 +18,10 @@ $container['logger'] = function ($c) {
     return $logger;
 };
 
+$container['providers'] = function($c) {
+    return new \Controllers\Providers($c);
+};
+
 $container['clients'] = function($c) {
     return new \Controllers\Clients($c);
 };

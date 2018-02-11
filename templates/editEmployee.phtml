@@ -2,24 +2,15 @@
 
 {% block view %}
 
-{% if status %}
-KLIENT ZOSTAŁ DODANY
-{% endif %}
 <div class="row">
-    <h1>WPROWADŹ NOWEGO KLIENTA</h1>
+    <h1>EDYCJA PRACOWNIKA PRACOWNIKA</h1>
 </div>
 <div class="row">
     <form method="post" class="col-sm-8">
         <div class="form-group row">
-            <label for="firma" class="col-sm-4 col-form-label">Nazwa firmy</label>
-            <div class="col-sm-8">
-                <input type="text" class="form-control" name="firma" id="firma">
-            </div>
-        </div>
-        <div class="form-group row">
            <label for="stanowisko" class="col-sm-4 col-form-label">Stanowisko</label>
            <div class="col-sm-8">
-               <input type="text" class="form-control" name="stanowisko" id="stanowisko">
+               <input type="text" class="form-control" name="stanowisko" id="stanowisko" value="{{ employee.stanowisko }}">
            </div>
         </div>
         <div class="form-group row">
@@ -34,37 +25,61 @@ KLIENT ZOSTAŁ DODANY
         <div class="form-group row">
            <label for="imie" class="col-sm-4 col-form-label">Imię</label>
            <div class="col-sm-8">
-               <input type="text" class="form-control" name="imie" id="imie">
+               <input type="text" class="form-control" name="imie" id="imie" value="{{ employee.imie }}">
            </div>
         </div>
         <div class="form-group row">
            <label for="nazwisko" class="col-sm-4 col-form-label">Nazwisko</label>
            <div class="col-sm-8">
-               <input type="text" class="form-control" name="nazwisko" id="nazwisko">
+               <input type="text" class="form-control" name="nazwisko" id="nazwisko" value="{{ employee.nazwisko }}">
            </div>
+        </div>
+        <div class="form-group row">
+           <label for="pseudonim" class="col-sm-4 col-form-label">Pseudonim</label>
+           <div class="col-sm-8">
+               <input type="text" class="form-control" name="pseudonim" id="pseudonim" value="{{ employee.pseudonim }}">
+           </div>
+        </div>
+        <div class="form-group row">
+            <label for="zatrudniony_od" class="col-sm-4 col-form-label">Zatrudniony od</label>
+            <div class='input-group date col-sm-8' id='zatrudniony_od'>
+                 <input type='text' class="form-control" name="zatrudniony_od" id="zatrudniony_od_data" value="{{ employee.zatrudniony_od }}">
+                 <span class="input-group-addon">
+                     <span class="glyphicon glyphicon-calendar"></span>
+                 </span>
+             </div>
+        </div>
+        <div class="form-group row">
+            <label for="zatrudniony_do" class="col-sm-4 col-form-label">Zatrudniony do</label>
+            <div class='input-group date col-sm-8' id='datetimepicker1'>
+                 <input type='text' class="form-control" name="zatrudniony_do" id="zatrudniony_do_data" value="{{ employee.zatrudniony_do }}">
+                 <span class="input-group-addon">
+                     <span class="glyphicon glyphicon-calendar"></span>
+                 </span>
+             </div>
+        </div>
+        <div class="form-group row">
+            <label for="pstawka" class="col-sm-4 col-form-label">Pstawka</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" name="pstawka" id="pstawka" value="{{ employee.pstawka }}">
+            </div>
         </div>
         <div class="form-group row">
             <label for="telefon" class="col-sm-4 col-form-label">Telefon</label>
             <div class="col-sm-8">
-                <input type="text" class="form-control" name="telefon" id="telefon">
+                <input type="text" class="form-control" name="telefon" id="telefon" value="{{ employee.telefon }}">
             </div>
         </div>
         <div class="form-group row">
             <label for="mobile" class="col-sm-4 col-form-label">Komórka</label>
             <div class="col-sm-8">
-                <input type="text" class="form-control" name="mobile" id="mobile">
+                <input type="text" class="form-control" name="mobile" id="mobile" value="{{ employee.mobile }}">
             </div>
-        </div>
-        <div class="form-group row">
-           <label for="email" class="col-sm-4 col-form-label">E-mail</label>
-           <div class="col-sm-8">
-               <input type="email" class="form-control" name="email" id="email">
-           </div>
         </div>
         <div class="form-group row">
             <label for="kraj" class="col-sm-4 col-form-label">Kraj</label>
             <div class="col-sm-8">
-                <input type="text" class="form-control" name="kraj" id="kraj">
+                <input type="text" class="form-control" name="kraj" id="kraj" value="{{ employee.kraj }}">
             </div>
         </div>
         <div class="form-group row">
@@ -93,26 +108,38 @@ KLIENT ZOSTAŁ DODANY
         <div class="form-group row">
            <label for="miasto" class="col-sm-4 col-form-label">Miasto</label>
            <div class="col-sm-8">
-               <input type="text" class="form-control" name="miasto" id="miasto">
+               <input type="text" class="form-control" name="miasto" id="miasto" value="{{ employee.miasto }}">
            </div>
         </div>
         <div class="form-group row">
            <label for="ulica" class="col-sm-4 col-form-label">Ulica</label>
            <div class="col-sm-8">
-               <input type="text" class="form-control" name="ulica" id="ulica">
+               <input type="text" class="form-control" name="ulica" id="ulica" value="{{ employee.ulica }}">
            </div>
         </div>
         <div class="form-group row">
            <label for="nrLokalu" class="col-sm-4 col-form-label">Nr lokalu</label>
            <div class="col-sm-8">
-               <input type="text" class="form-control" name="nrLokalu" id="nrLokalu">
+               <input type="text" class="form-control" name="nrLokalu" id="nrLokalu" value="{{ employee.nrLokalu }}">
            </div>
         </div>
-         <div class="form-group row">
-           <label for="kgrupa" class="col-sm-4 col-form-label">kgrupa</label>
+        <div class="form-group row">
+           <label for="email" class="col-sm-4 col-form-label">E-mail</label>
            <div class="col-sm-8">
-               <input type="text" class="form-control" name="kgrupa" id="kgrupa">
+               <input type="email" class="form-control" name="email" id="email" value="{{ employee.email }}">
            </div>
+        </div>
+        <div class="form-group row">
+            <label for="nalezny_urlop" class="col-sm-4 col-form-label">Należny urlop</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" name="nalezny_urlop" id="nalezny_urlop" value="{{ employee.nalezny_urlop }}">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="wykorzystany_urlop" class="col-sm-4 col-form-label">Wykorzystany urlop</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" name="wykorzystany_urlop" id="wykorzystany_urlop" value="{{ employee.wykorzystany_urlop }}">
+            </div>
         </div>
         <div class="form-group row">
            <label for="foto" class="col-sm-4 col-form-label">Foto</label>
@@ -123,11 +150,12 @@ KLIENT ZOSTAŁ DODANY
         <div class="form-group row">
            <label for="uwagi" class="col-sm-4 col-form-label">Uwagi</label>
            <div class="col-sm-8">
-               <input type="text" class="form-control" name="uwagi" id="uwagi">
+               <input type="text" class="form-control" name="uwagi" id="uwagi" value="{{ employee.uwagi }}">
            </div>
         </div>
-        <button type="submit" class="btn btn-primary">Dodaj</button>
+        <button type="submit" class="btn btn-primary">ZAPISZ EDYCJĘ</button>
     </form>
 </div>
 
 {% endblock %}
+

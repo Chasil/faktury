@@ -2,24 +2,21 @@
 
 {% block view %}
 
-{% if status %}
-KLIENT ZOSTAŁ DODANY
-{% endif %}
 <div class="row">
-    <h1>WPROWADŹ NOWEGO KLIENTA</h1>
+    <h1>EDYCJA KLIENTA</h1>
 </div>
 <div class="row">
     <form method="post" class="col-sm-8">
         <div class="form-group row">
             <label for="firma" class="col-sm-4 col-form-label">Nazwa firmy</label>
             <div class="col-sm-8">
-                <input type="text" class="form-control" name="firma" id="firma">
+                <input type="text" class="form-control" name="firma" id="firma" value="{{ client.firma }}">
             </div>
         </div>
         <div class="form-group row">
            <label for="stanowisko" class="col-sm-4 col-form-label">Stanowisko</label>
            <div class="col-sm-8">
-               <input type="text" class="form-control" name="stanowisko" id="stanowisko">
+               <input type="text" class="form-control" name="stanowisko" id="stanowisko" value="{{ client.stanowisko }}">
            </div>
         </div>
         <div class="form-group row">
@@ -34,37 +31,37 @@ KLIENT ZOSTAŁ DODANY
         <div class="form-group row">
            <label for="imie" class="col-sm-4 col-form-label">Imię</label>
            <div class="col-sm-8">
-               <input type="text" class="form-control" name="imie" id="imie">
+               <input type="text" class="form-control" name="imie" id="imie" value="{{ client.firma }}">
            </div>
         </div>
         <div class="form-group row">
            <label for="nazwisko" class="col-sm-4 col-form-label">Nazwisko</label>
            <div class="col-sm-8">
-               <input type="text" class="form-control" name="nazwisko" id="nazwisko">
+               <input type="text" class="form-control" name="nazwisko" id="nazwisko" value="{{ client.nazwisko }}">
            </div>
         </div>
         <div class="form-group row">
             <label for="telefon" class="col-sm-4 col-form-label">Telefon</label>
             <div class="col-sm-8">
-                <input type="text" class="form-control" name="telefon" id="telefon">
+                <input type="text" class="form-control" name="telefon" id="telefon" value="{{ client.telefon }}">
             </div>
         </div>
         <div class="form-group row">
             <label for="mobile" class="col-sm-4 col-form-label">Komórka</label>
             <div class="col-sm-8">
-                <input type="text" class="form-control" name="mobile" id="mobile">
+                <input type="text" class="form-control" name="mobile" id="mobile" value="{{ client.mobile }}">
             </div>
         </div>
         <div class="form-group row">
            <label for="email" class="col-sm-4 col-form-label">E-mail</label>
            <div class="col-sm-8">
-               <input type="email" class="form-control" name="email" id="email">
+               <input type="email" class="form-control" name="email" id="email" value="{{ client.email }}">
            </div>
         </div>
         <div class="form-group row">
             <label for="kraj" class="col-sm-4 col-form-label">Kraj</label>
             <div class="col-sm-8">
-                <input type="text" class="form-control" name="kraj" id="kraj">
+                <input type="text" class="form-control" name="kraj" id="kraj" value="{{ client.kraj }}">
             </div>
         </div>
         <div class="form-group row">
@@ -93,25 +90,25 @@ KLIENT ZOSTAŁ DODANY
         <div class="form-group row">
            <label for="miasto" class="col-sm-4 col-form-label">Miasto</label>
            <div class="col-sm-8">
-               <input type="text" class="form-control" name="miasto" id="miasto">
+               <input type="text" class="form-control" name="miasto" id="miasto" value="{{ client.miasto }}">
            </div>
         </div>
         <div class="form-group row">
            <label for="ulica" class="col-sm-4 col-form-label">Ulica</label>
            <div class="col-sm-8">
-               <input type="text" class="form-control" name="ulica" id="ulica">
+               <input type="text" class="form-control" name="ulica" id="ulica" value="{{ client.ulica }}">
            </div>
         </div>
         <div class="form-group row">
            <label for="nrLokalu" class="col-sm-4 col-form-label">Nr lokalu</label>
            <div class="col-sm-8">
-               <input type="text" class="form-control" name="nrLokalu" id="nrLokalu">
+               <input type="text" class="form-control" name="nrLokalu" id="nrLokalu" value="{{ client.nrLokalu }}">
            </div>
         </div>
          <div class="form-group row">
            <label for="kgrupa" class="col-sm-4 col-form-label">kgrupa</label>
            <div class="col-sm-8">
-               <input type="text" class="form-control" name="kgrupa" id="kgrupa">
+               <input type="text" class="form-control" name="kgrupa" id="kgrupa" value="{{ client.kgrupa }}">
            </div>
         </div>
         <div class="form-group row">
@@ -123,10 +120,10 @@ KLIENT ZOSTAŁ DODANY
         <div class="form-group row">
            <label for="uwagi" class="col-sm-4 col-form-label">Uwagi</label>
            <div class="col-sm-8">
-               <input type="text" class="form-control" name="uwagi" id="uwagi">
+               <input type="text" class="form-control" name="uwagi" id="uwagi" value="{{ client.uwagi }}">
            </div>
         </div>
-        <button type="submit" class="btn btn-primary">Dodaj</button>
+        <button type="submit" class="btn btn-primary">Zapisz zminay</button>
     </form>
 </div>
 

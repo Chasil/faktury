@@ -1,0 +1,62 @@
+{% extends "index.phtml" %}
+
+{% block view %}
+
+    <div class="row">
+        DOSTAWCY
+    </div>
+    <div class="row">
+        <a href="addProvider" class="btn btn-success btn-lg" role="button">Dodaj dostawcę</a>
+    </div>
+    <div class="row">
+        <table class='table table-striped'>
+            <thead>
+                <tr>
+                    <th>Firma</th>
+                    <th>Stanowisko</th>
+                    <th>Tytuł</th>
+                    <th>Imię</th>
+                    <th>Nazwisko</th>
+                    <th>Telefon</th>
+                    <th>Komórka</th>
+                    <th>Email</th>
+                    <th>Kraj</th>
+                    <th>Województwo</th>
+                    <th>Miasto</th>
+                    <th>Ulica</th>
+                    <th>Nr Lokalu</th>
+                    <th>Kgrupa</th>
+                    <th>Foto</th>
+                    <th>Uwagi</th>
+                    <th>Edytuj</th>
+                    <th>Usuń</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for provider in providers %}
+                <tr>
+                <td>{{ provider.firma }}</td>
+                <td>{{ provider.stanowisko }}</td>
+                <td>{{ provider.tytul }}</td>
+                <td>{{ provider.imie }}</td>
+                <td>{{ provider.nazwisko }}</td>
+                <td>{{ provider.telefon }}</td>
+                <td>{{ provider.mobile }}</td>
+                <td>{{ provider.email }}</td>
+                <td>{{ provider.kraj }}</td>
+                <td>{{ provider.wojewodztwo }}</td>
+                <td>{{ provider.miasto }}</td>
+                <td>{{ provider.ulica }}</td>
+                <td>{{ provider.nrLokalu }}</td>
+                <td>{{ provider.kgrupa }}</td>
+                <td>{{ provider.foto }}</td>
+                <td>{{ provider.uwagi }}</td>
+                <td><a href="editProvider/{{ provider.id }}">Edytuj</a></td>
+                <td><a href="#">Usuń</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

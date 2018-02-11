@@ -2,64 +2,67 @@
 
 {% block view %}
 
-    {{ clients.0.firma }}
-    {{ clients.1.firma }}
+{{ status }}
 
-    <div class="row">
-        KLIENCI
-    </div>
-    <div class="row">
-        <a href="addClient" class="btn btn-success btn-lg" role="button">Dodaj nowego</a>
-    </div>
-    <div class="row">
-        <table class='table table-striped'>
-            <thead>
-                <tr>
-                    <th>Firma</th>
-                    <th>Stanowisko</th>
-                    <th>Tytuł</th>
-                    <th>Imię</th>
-                    <th>Nazwisko</th>
-                    <th>Telefon</th>
-                    <th>Komórka</th>
-                    <th>Email</th>
-                    <th>Kraj</th>
-                    <th>Województwo</th>
-                    <th>Miasto</th>
-                    <th>Ulica</th>
-                    <th>Nr Lokalu</th>
-                    <th>Kgrupa</th>
-                    <th>Foto</th>
-                    <th>Uwagi</th>
-                    <th>Edytuj</th>
-                    <th>Usuń</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for client in clients %}
-                <tr>
-                <td>{{ client.firma }}</td>
-                <td>{{ client.stanowisko }}</td>
-                <td>{{ client.tytul }}</td>
-                <td>{{ client.imie }}</td>
-                <td>{{ client.nazwisko }}</td>
-                <td>{{ client.telefon }}</td>
-                <td>{{ client.mobile }}</td>
-                <td>{{ client.email }}</td>
-                <td>{{ client.kraj }}</td>
-                <td>{{ client.wojewodztwo }}</td>
-                <td>{{ client.miasto }}</td>
-                <td>{{ client.ulica }}</td>
-                <td>{{ client.nrLokalu }}</td>
-                <td>{{ client.kgrupa }}</td>
-                <td>{{ client.foto }}</td>
-                <td>{{ client.uwagi }}</td>
-                <td><a href="#">Edytuj</a></td>
-                <td><a href="#">Usuń</a></td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
+{% if status %}
+EDYCJA ZAKOŃCZONA POPRAWNIE
+{% endif %}
+
+<div class="row">
+    KLIENCI
+</div>
+<div class="row">
+    <a href="addClient" class="btn btn-success btn-lg" role="button">Dodaj klienta</a>
+</div>
+<div class="row">
+    <table class='table table-striped'>
+        <thead>
+            <tr>
+                <th>Firma</th>
+                <th>Stanowisko</th>
+                <th>Tytuł</th>
+                <th>Imię</th>
+                <th>Nazwisko</th>
+                <th>Telefon</th>
+                <th>Komórka</th>
+                <th>Email</th>
+                <th>Kraj</th>
+                <th>Województwo</th>
+                <th>Miasto</th>
+                <th>Ulica</th>
+                <th>Nr Lokalu</th>
+                <th>Kgrupa</th>
+                <th>Foto</th>
+                <th>Uwagi</th>
+                <th>Edytuj</th>
+                <th>Usuń</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for client in clients %}
+            <tr>
+            <td>{{ client.firma }}</td>
+            <td>{{ client.stanowisko }}</td>
+            <td>{{ client.tytul }}</td>
+            <td>{{ client.imie }}</td>
+            <td>{{ client.nazwisko }}</td>
+            <td>{{ client.telefon }}</td>
+            <td>{{ client.mobile }}</td>
+            <td>{{ client.email }}</td>
+            <td>{{ client.kraj }}</td>
+            <td>{{ client.wojewodztwo }}</td>
+            <td>{{ client.miasto }}</td>
+            <td>{{ client.ulica }}</td>
+            <td>{{ client.nrLokalu }}</td>
+            <td>{{ client.kgrupa }}</td>
+            <td>{{ client.foto }}</td>
+            <td>{{ client.uwagi }}</td>
+            <td><a href="editClient/{{ client.id }}">Edytuj</a></td>
+            <td><a href="removeClient/?id={{ client.id }}">Usuń</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
 
 {% endblock %}
